@@ -5,8 +5,8 @@
     
     if(isset($_GET['act'])) {
         switch ($_GET['act']) {
-            case 'fetch':
-                include "../apps/fetch.php";
+            case 'product':
+                include "../apps/product.php";
                 break;
             case 'login':
                 include "login.php";
@@ -16,11 +16,13 @@
                 header('Location: index.php');
                 break;
             case 'register':
-                include "register.php";
+                include "../apps/register.php";
                 break;
-                case 'userinfo':
-                    include "userinfo.php";
-                    break;
+            case 'userinfo':
+                include "../apps/userinfo.php";
+                break;
+            case 'viewcart':
+                include "../apps/viewcart.php";
             default:
                 include "../apps/home.php";
                 break;

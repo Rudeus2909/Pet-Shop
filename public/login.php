@@ -7,7 +7,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $password = $_POST['password'];
 
     $_SESSION['username'] = $username;
-    $stmt = $pdo->prepare('SELECT * FROM shop.taikhoan WHERE username=:username AND password=:password');
+    $stmt = $conn->prepare('SELECT * FROM shop.taikhoan WHERE username=:username AND password=:password');
     $stmt->bindParam(':username', $username);
     $stmt->bindParam(':password', $password);
     $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -16,10 +16,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if ($count > 0){
         $row = $stmt->fetch();
         if($row["role"]=="1"){
-            header("Location: admin.php");
+            header("Location:../admincp/login.php");
+            exit();
         }
         elseif($row["role"]=="0"){
-            header("Location: index.php");
+            header("Location:index.php");
             exit;
         }
     } else {
@@ -35,6 +36,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
     <title>Đăng nhập</title>
 </head>
 <body>
