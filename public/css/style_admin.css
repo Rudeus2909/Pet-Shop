@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body{
+    background: url(../img/bg_admin.jpg);
+}
+
+.container{
+    max-width: 960px;
+    margin: 0px auto;
+}
+
+header{
+    background-color: #131921;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+}
+
+#logo{
+    margin-top: 10px;
+    padding: 10px 5px;
+}
+
+#logo img{
+    padding-top: 5px;
+    width: 120px;
+    height: auto;
+}
+
+#main-menu{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding-top: 70px;
+}
+
+#main-menu li{
+    position: relative;
+}
+
+#main-menu li a{
+    font-weight: 700;
+    color: #f8f8f8;
+    display: block;
+    padding: 18px 20px;
+    text-decoration: none;
+}
+
+#main-menu ul.sub-menu{
+    position: absolute;
+    background-color: #131921;
+    padding: 15px 0px;
+    list-style: none;
+    width: 200px;
+    display: none;
+    z-index: 1000;
+}
+
+#main-menu li:hover ul.sub-menu{
+    display: block;
+}
+
+#main-menu ul.sub-menu a{
+    padding: 8px 15px;
+    border-bottom: 1px solid #434343;
+}
+
+#main-menu ul.sub-menu li:hover a{
+    border-bottom: 1px solid #9a9999;
+    color: crimson;
+}
+
+#main-menu ul.sub-menu li:last-child a{
+    border: none;
+}
+
+#main-menu>li>a{
+    position: relative;
+}
+
+#main-menu>li>a::before{
+    content: "";
+    height: 4px;
+    width: 0px;
+    background: #f00;
+    position: absolute;
+    bottom: 0px;
+    transition: 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#main-menu>li>:hover::before{
+    width: 80%;
+}
+
+.title{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title h2{
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+}
+
+.title b{
+    margin: 0 15px;
+    display: block;
+    -webkit-box-flex: 1;
+    flex: 1;
+    opacity: 1;
+    max-width: 100px;
+    background-color: crimson;
+    height: 4px;
+}
+
+.products, .overview{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.products div, .overview div{
+    margin: 5px;
+    padding: 50px;
+}
+
+.products div p, .overview div p{
+    margin: 0;
+}
+
+p{
+    font-size: 20px;
+    font-weight: 500;
+}

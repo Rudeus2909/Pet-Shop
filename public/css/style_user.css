@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap');
+
+.main .info div table tr td, #col-form-label, td{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+}
+
+.main .info div .title .text-center, .main .info #orders, .main .info #edit, .main .info #change_pass, #exampleModalLabel, #staticBackdropLabel,
+#exampleModalLabel1, th{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title b{
+    margin: 0 15px;
+    display: block;
+    -webkit-box-flex: 1;
+    flex: 1;
+    opacity: 1;
+    max-width: 100px;
+    background-color: crimson;
+    height: 3px;
+}
+
+th,
+td {
+    border: 1.5px;
+    border-style: dotted;
+}
+
+.main .info{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.main .info #orders{
+    margin: 5px 0 5px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #1e90ff;
+    width: 210px;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    -webkit-transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-duration: 0.3s;
+    transition-property: box-shadow, transform;
+
+}
+
+
+.main .info #edit{
+    margin: 5px 0 5px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #1e90ff;
+    width: 210px;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    -webkit-transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-duration: 0.3s;
+    transition-property: box-shadow, transform;
+
+}
+
+.main .info #change_pass{
+    margin: 5px 0 5px 40px;
+    margin-left: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #1e90ff;
+    width: 190px;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    -webkit-transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-duration: 0.3s;
+    transition-property: box-shadow, transform;
+}
+
+.main .info #orders:hover  {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.main .info #edit:hover{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.main .info #change_pass:hover  {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.info table tr #td{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.info table tr td{
+    font-size: 19px;
+}
+
+.modal .modal-dialog .modal-content .modal-body form .btn{
+    margin-left: 20%;
+    background: #1e90ff;
+    color: #fff;
+}
+
+.modal .modal-dialog .modal-content .modal-body form .btn-secondary{
+    background: #7d7f80;
+    color: #fff;
+}
