@@ -37,7 +37,7 @@
                                 <li><a href="index.php?act=add_product">THÊM SẢN PHẨM</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">QUẢN LÝ ĐƠN HÀNG</a></li>
+                        <li><a href="index.php?act=order_manage">QUẢN LÝ ĐƠN HÀNG</a></li>
                         <li><a href="index.php?act=signout">ĐĂNG XUẤT</a></li>
                     </ul>
                 </nav>

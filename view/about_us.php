@@ -9,9 +9,9 @@
 
 <body>
     <div class="title">
-    <b></b>
-    <h2>GIỚI THIỆU</h2>
-    <b></b>
+        <b></b>
+        <h2>GIỚI THIỆU</h2>
+        <b></b>
     </div>
     <p>Cửa hàng Cute Pet Shop</p>
     <p>Cute Pet Shop được mở bởi các thành viên chung niềm đam mê nuôi dưỡng, chăm sóc thú cưng. Bán hàng với giá rẻ

@@ -49,11 +49,11 @@
     <div class="wrapper">
         <div class="row">
 
-            <div class="col-6 img">
-                <?php echo "<img src='data:image/png;base64,".base64_encode($results["picture"])."' style='width: 396px; height: 508px;'>"?>
+            <div class="col-4 img">
+                <?php echo "<img src='data:image/png;base64,".base64_encode($results["picture"])."' style='width: 296px; height: 408px;'>"?>
             </div>
 
-            <div class="col-6 description">
+            <div class="col-8 description">
                 <h1><?php echo $results["product_name"]?></h1>
 
                 <b></b>
@@ -74,63 +74,75 @@
                         </tr>
                     </tbody>
                 </table>
-                <p>Lưu ý: <i>Giá sản phẩm có thể thay đổi theo từng thời điểm. Inbox fanpage hoặc gọi hotline để biết thêm chi tiết</i></p>
+                <p>Lưu ý: <i>Giá sản phẩm có thể thay đổi theo từng thời điểm. Inbox fanpage hoặc gọi hotline để biết
+                        thêm chi tiết</i></p>
                 <form action="index.php?act=add_cart" method="post">
                     <input type="hidden" name="id_product" value=<?=$results["id_product"]?>>
                     <input type="hidden" name="product_name" value="<?=$results["product_name"]?>">
-                    <input type="hidden" name="picture" value="<?="<img src='data:image/png;base64,".base64_encode($results["picture"])."' width='100px'>"?>">
+                    <input type="hidden" name="picture"
+                        value="<?="<img src='data:image/png;base64,".base64_encode($results["picture"])."' width='100px'>"?>">
                     <input type="hidden" name="price" value="<?=$results["price"]?>">
                     <div class="amount">
                         <input type="button" value="-" id="minus" onclick="subtract()">
-                        <input type="number" name="amount" id="amount" step="1" min="1" value="1" placeholder inputmode="numeric">
+                        <input class="text-center" type="number" name="amount" id="amount" step="1" min="1" value="1" placeholder
+                            inputmode="numeric">
                         <input type="button" value="+" id="add" onclick="plus()">
+                        <button class="add_cart" name="add_cart">THÊM VÀO GIỎ HÀNG</button>
                     </div>
-                    <button name="add_cart">Thêm vào giỏ hàng</button>
                 </form>
+                <div class="contact">
+                    <button class="zalo">CHAT ZALO</button>
+                    <button class="hotline">GỌI HOTLINE</button>
+                </div>
             </div>
         </div>
 
         <div>
-            <h2>SẢN PHẨM TƯƠNG TỰ</h2>
+            <div class="title">
+                <b></b>
+                <h2>SẢN PHẨM TƯƠNG TỰ</h2>
+                <b></b>
+            </div>
             <div class="similar_product">
                 <?php foreach($results2 as $product) {?>
                 <div>
-                <?php echo "<img src='data:image/png;base64,".base64_encode($product->picture)."' style='width: 150px'>"?>
+                    <?php echo "<img src='data:image/png;base64,".base64_encode($product->picture)."' style='width: 150px'>"?>
                 </div>
                 <?php }?>
             </div>
         </div>
     </div>
     <script>
-        let amountElement = document.getElementById('amount')
-        let amount = amountElement.value
+    let amountElement = document.getElementById('amount')
+    let amount = amountElement.value
 
-        let render = (amount) => {
-            amountElement.value = amount;
-        }
+    let render = (amount) => {
+        amountElement.value = amount;
+    }
 
-        let plus = () => {
-            amount++
-            render(amount);
-        }
+    let plus = () => {
+        amount++
+        render(amount);
+    }
 
-        let subtract = () => {
-            if (amount > 1)
-                amount--;
-            render(amount);
-        }
+    let subtract = () => {
+        if (amount > 1)
+            amount--;
+        render(amount);
+    }
 
-        amountElement.addEventListener('input', () =>{
-            amount = amountElement.value;
-            render(amount);
-        });
+    amountElement.addEventListener('input', () => {
+        amount = amountElement.value;
+        render(amount);
+    });
     </script>
 </body>
+
 </html>
 <?php }
     //Nếu sản phẩm là phụ kiện thì hiển thị chi tiết phụ kiện
     else {?>
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -157,15 +169,18 @@
                         <td><?php echo $results1["detail_description"]?></td>
                     </tr>
                 </table>
-                <p>Lưu ý: <i>Giá sản phẩm có thể thay đổi theo từng thời điểm. Inbox fanpage hoặc gọi hotline để biết thêm chi tiết</i></p>
+                <p>Lưu ý: <i>Giá sản phẩm có thể thay đổi theo từng thời điểm. Inbox fanpage hoặc gọi hotline để biết
+                        thêm chi tiết</i></p>
                 <form action="index.php?act=add_cart" method="post">
                     <input type="hidden" name="id_product" value=<?=$results["id_product"]?>>
                     <input type="hidden" name="product_name" value="<?=$results["product_name"]?>">
-                    <input type="hidden" name="picture" value="<?="<img src='data:image/png;base64,".base64_encode($results["picture"])."' width='100px'>"?>">
+                    <input type="hidden" name="picture"
+                        value="<?="<img src='data:image/png;base64,".base64_encode($results["picture"])."' width='100px'>"?>">
                     <input type="hidden" name="price" value="<?=$results["price"]?>">
                     <div class="amount">
                         <input type="button" value="-" id="minus" onclick="subtract()">
-                        <input type="number" name="amount" id="amount" step="1" min="1" value="1" placeholder inputmode="numeric">
+                        <input type="number" name="amount" id="amount" step="1" min="1" value="1" placeholder
+                            inputmode="numeric">
                         <input type="button" value="+" id="add" onclick="plus()">
                     </div>
                     <button name="add_cart">Thêm vào giỏ hàng</button>
@@ -178,36 +193,37 @@
             <div class="similar_product">
                 <?php foreach($results2 as $product) {?>
                 <div>
-                <?php echo "<img src='data:image/png;base64,".base64_encode($product->picture)."' style='width: 150px'>"?>
+                    <?php echo "<img src='data:image/png;base64,".base64_encode($product->picture)."' style='width: 150px'>"?>
                 </div>
                 <?php }?>
             </div>
         </div>
     </div>
     <script>
-        let amountElement = document.getElementById('amount')
-        let amount = amountElement.value
+    let amountElement = document.getElementById('amount')
+    let amount = amountElement.value
 
-        let render = (amount) => {
-            amountElement.value = amount;
-        }
+    let render = (amount) => {
+        amountElement.value = amount;
+    }
 
-        let plus = () => {
-            amount++
-            render(amount);
-        }
+    let plus = () => {
+        amount++
+        render(amount);
+    }
 
-        let subtract = () => {
-            if (amount > 1)
-                amount--;
-            render(amount);
-        }
+    let subtract = () => {
+        if (amount > 1)
+            amount--;
+        render(amount);
+    }
 
-        amountElement.addEventListener('input', () =>{
-            amount = amountElement.value;
-            render(amount);
-        });
+    amountElement.addEventListener('input', () => {
+        amount = amountElement.value;
+        render(amount);
+    });
     </script>
 </body>
+
 </html>
 <?php }?>

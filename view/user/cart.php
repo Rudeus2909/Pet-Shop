@@ -15,8 +15,18 @@
         $count = count($results1);
         
         if ($count == 0) {
-            echo '<h2 style="text-align: center;">Giỏ hàng rỗng!</h2>';
-            echo '<button><a href="index.php?act=home">Quay trở lại cửa hàng</a></button>';
+            echo '<h2 style="text-align: center; margin: 10px;">GIỎ HÀNG CỦA BẠN ĐANG RỖNG!</h2>';
+            echo '<div style="display: flex;
+                            justify-content: center;
+                            align-items: center;">
+                    <button style="margin: 10px;
+                                   width: 250px;
+                                   height: 35px;
+                                   border: none;
+                                   background: rgb(56, 168, 238);
+                                   border-radius: 10px">
+                    <a style="color: #fff;
+                            text-decoration: none;" href="index.php?act=home">QUAY TRỞ VỀ CỬA HÀNG</a></button></div>';
         } else {
 
 ?>
@@ -38,14 +48,14 @@
     </div>
     <div class="wrapper">
         <div class="row">
-            <div class="col-9">
-                <table>
+            <div class="col-7">
+                <table class="products">
                     <thead>
                         <tr>
-                            <th colspan="3">Sản phẩm</th>
-                            <th>Giá</th>
-                            <th>Số lượng</th>
-                            <th>Tạm tính</th>
+                            <th id="product" colspan="3">Sản phẩm</th>
+                            <th style="width: 100px">Giá</th>
+                            <th style="width: 170px">Số lượng</th>
+                            <th style="width: 100px">Tạm tính</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -54,46 +64,46 @@
                                 $temp_total = $results["price"] * $results["amount"];
                                 $total = $total + $temp_total;?>
                         <tr>
-                            <td>
+                            <td class="del">
                                 <form action="index.php?act=del_cart_product" method="post">
                                     <input type="hidden" name="id_product" value="<?=$results["id_product"]?>">
                                     <button name="delete"><i class="fa-regular fa-trash-can"></i></button>
                                 </form>
                             </td>
-                            <td><?php echo $results["picture"]?></td>
-                            <td><?php echo $results["product_name"]?></td>
-                            <td><?php echo number_format($results["price"])?> ₫</td>
+                            <td class="picture"><?php echo $results["picture"]?></td>
+                            <td style="text-align: center;"><?php echo $results["product_name"]?></td>
+                            <td style="text-align: center;"><?php echo number_format($results["price"])?> ₫</td>
                             <td>
-                                <form action="index.php?act=update_cart" method="post">
+                                <form style="display: flex; margin: 7px;" action="index.php?act=update_cart" method="post">
                                     <input type="hidden" name="id_product" value="<?=$results["id_product"]?>">
-                                    <input type="number" name="amount" id="amount" step="1" min="1"
+                                    <input style="background: #dfdede; border: 1px solid #ececec;" class="text-center" type="number" name="amount" id="amount" step="1" min="1"
                                         value="<?=$results["amount"]?>" placeholder inputmode="numeric">
-                                    <input type="submit" name="update" value="Cập nhật">
+                                    <input id="update" type="submit" name="update" value="Cập nhật">
                                 </form>
 
                             </td>
-                            <td><?php echo number_format($temp_total)?> ₫</td>
+                            <td style="text-align: center;"><?php echo number_format($temp_total)?> ₫</td>
                         </tr>
                         <?php }?>
                     </tbody>
                 </table>
             </div>
-            <div class="col-3">
-                <table>
+            <div class="col-5">
+                <table class="total">
                     <tr>
-                        <th colspan="2">Cộng giỏ hàng</th>
+                        <th style="width: 400px;" colspan="2">Cộng giỏ hàng</th>
                     </tr>
                     <tr>
-                        <td>Tạm tính</td>
+                        <td style="height: 50px;">Tạm tính</td>
                         <td><?php echo number_format($total)?> ₫</td>
                     </tr>
                     <tr>
-                        <td>Tổng</td>
+                        <td style="height: 50px;">Tổng</td>
                         <td><?php echo number_format($total)?> ₫</td>
                     </tr>
                 </table>
-                <button onclick="window.history.back()">Tiếp tục xem sản phẩm</button>
-                <button><a href="index.php?act=order">Đặt hàng</a></button>
+                <button onclick="window.history.back()" class="continue">TIẾP TỤC XEM SẢN PHẨM</button>
+                <button class="payment"><a style="text-decoration: none; color: #fff" href="index.php?act=order">ĐẶT HÀNG</a></button>
             </div>
         </div>
     </div>

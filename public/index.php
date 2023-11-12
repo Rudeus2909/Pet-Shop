@@ -268,6 +268,12 @@
                 include "../model/admin/code_add_product_detail.php";
                 break;
 
+            //Hiển thị trang quản lý đơn hàng
+            case 'order_manage':
+                include "../view/admin/header_admin.php";
+                include "../view/admin/order_manage.php";
+                break;
+
             //Hiển thị trang chủ website
             case 'home':
                 include "../view/header.php";

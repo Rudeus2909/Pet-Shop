@@ -11,7 +11,7 @@
     font-weight: 700;
 }
 
-.title{
+.title, .info_user{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,6 +64,7 @@ td {
 
 .main .info #edit{
     margin: 5px 0 5px 40px;
+    margin-left: 25px;
     font-size: 16px;
     font-weight: bold;
     background: #1e90ff;
@@ -140,4 +141,15 @@ td {
 .modal .modal-dialog .modal-content .modal-body form .btn-secondary{
     background: #7d7f80;
     color: #fff;
+}
+
+#order_detail{
+    font-weight: 700;
+    color: #fff;
+    margin-left: 2px;
+    width: 120px;
+    height: 30px;
+    border: none;
+    background: rgb(56, 168, 238);
+    border-radius: 2px;
 }

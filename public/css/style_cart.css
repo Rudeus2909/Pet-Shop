@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap');
 
-.title{
+.title, .btn{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,4 +42,104 @@ td{
 
 a{
     color: black;
+}
+
+.picture{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
+
+.del form button{
+    margin-left: 7px;
+    border: none;
+    background: #6bc7e6;
+    color: #ee2d2d;
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+}
+
+.products{
+    margin-left: 100px;
+    margin-bottom: 10px;
+}
+#product{
+    width: 250px;
+}
+
+#amount{
+    width: 50px;
+}
+
+#update{
+    font-weight: 700;
+    color: #fff;
+    margin-left: 2px;
+    width: 100px;
+    height: 30px;
+    border: none;
+    background: rgb(56, 168, 238);
+    border-radius: 2px;
+}
+
+.continue{
+    font-weight: 700;
+    color: #fff;
+    margin-top: 5px;
+    width: 250px;
+    height: 30px;
+    border: none;
+    background: rgb(175, 175, 175);
+    border-radius: 2px;
+}
+
+.payment{
+    font-weight: 700;
+    color: #fff;
+    margin-left: 2px;
+    width: 145px;
+    height: 30px;
+    border: none;
+    background: rgb(56, 168, 238);
+    border-radius: 2px;
+}
+
+.order_info{
+    margin-left: 70px;
+    margin-bottom: 10px;
+}
+
+.your_order{
+    margin-left: 120px;
+    margin-bottom: 10px;
+}
+
+.back{
+    margin-right: 40px;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 5px;
+    width: 200px;
+    height: 30px;
+    border: none;
+    background: rgb(175, 175, 175);
+    border-radius: 2px;
+}
+
+.order{
+    margin-top: 5px;
+    font-weight: 700;
+    color: #fff;
+    margin-left: 2px;
+    width: 145px;
+    height: 30px;
+    border: none;
+    background: rgb(56, 168, 238);
+    border-radius: 2px;
+}
+
+.order_info1{
+    margin: 70px 0 0 70px;
 }

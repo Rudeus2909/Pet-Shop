@@ -36,24 +36,26 @@
                     <h3 class="text-center">THÔNG TIN CÁ NHÂN</h3>
                     <b></b>
                 </div>
-                <table>
-                    <tr>
-                        <td id="td">Họ và tên</td>
-                        <td><?php echo $results["name_user"];?></td>
-                    </tr>
-                    <tr>
-                        <td id="td">Địa chỉ</td>
-                        <td><?php echo $results["address"];?></td>
-                    </tr>
-                    <tr>
-                        <td id="td">Số điện thoại</td>
-                        <td><?php echo $results["phone"];?></td>
-                    </tr>
-                    <tr>
-                        <td id="td">Email</td>
-                        <td><?php echo $results["email"];?></td>
-                    </tr>
-                </table>
+                <div class="info_user">
+                    <table>
+                        <tr>
+                            <td id="td">Họ và tên</td>
+                            <td><?php echo $results["name_user"];?></td>
+                        </tr>
+                        <tr>
+                            <td id="td">Địa chỉ</td>
+                            <td><?php echo $results["address"];?></td>
+                        </tr>
+                        <tr>
+                            <td id="td">Số điện thoại</td>
+                            <td><?php echo $results["phone"];?></td>
+                        </tr>
+                        <tr>
+                            <td id="td">Email</td>
+                            <td><?php echo $results["email"];?></td>
+                        </tr>
+                    </table>
+                </div>
                 <button id="orders" type="button" class="btn btn-primary" data-bs-toggle="modal"
                     data-bs-target="#exampleModal1" data-bs-whatever="@mdo">Đơn hàng của bạn</button>
                 <button id="edit" type="button" class="btn btn-primary" data-bs-toggle="modal"
@@ -135,7 +137,7 @@
 
         <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1"
             aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h1 class="modal-title fs-5" id="exampleModalLabel1">Đơn hàng của bạn</h1>
@@ -144,18 +146,30 @@
                     <div class="modal-body">
                         <table>
                             <tr>
-                                <th>Mã Đơn hàng</th>
+                                <th>Mã đơn hàng</th>
                                 <th>Thời gian đặt hàng</th>
-                                <th> </th>
+                                <th>Họ và tên người đặt hàng</th>
+                                <th>Địa chỉ</th>
+                                <th>Số điện thoại</th>
+                                <th>Email</th>
+                                <th>Trạng thái</th>
+                                <th style="border: none;"> </th>
                             </tr>
                             <?php while ($results1 = $stmt1->fetch(PDO::FETCH_ASSOC)) {?>
                             <tr>
                                 <td><?php echo $results1["order_code"]?></td>
                                 <td><?php echo $results1["order_time"]?></td>
-                                <td><form action="index.php?act=show_orders" method="post">
-                                    <input type="hidden" name="id_order" value="<?=$results1["id_order"]?>">
-                                    <input type="submit" name="order_detail" value="Xem chi tiết">
-                                </form></td>
+                                <td><?php echo $results1["order_owner"]?></td>
+                                <td><?php echo $results1["address"]?></td>
+                                <td><?php echo $results1["phone"]?></td>
+                                <td><?php echo $results1["email"]?></td>
+                                <td><?php echo $results1["order_status"]?></td>
+                                <td>
+                                    <form action="index.php?act=show_orders" method="post">
+                                        <input type="hidden" name="id_order" value="<?=$results1["id_order"]?>">
+                                        <input id="order_detail" type="submit" name="order_detail" value="Xem chi tiết">
+                                    </form>
+                                </td>
                             </tr>
                             <?php }?>
                         </table>

@@ -30,14 +30,14 @@
 <body>
     <div class="title">
         <b></b>
-        <h2>ĐẶT HÀNG</h2>
+        <h2>THANH TOÁN</h2>
         <b></b>
     </div>
     <div class="wrapper">
-        <div class="row">
-            <form class="form" action="index.php?act=add_order" method="post">
-                <div class="col-6">
-                    <h4>Thông tin đặt hàng</h4>
+        <form class="form" action="index.php?act=add_order" method="post">
+            <div class="row">
+                <div class="col-5">
+                    <h4>Thông tin thanh toán</h4>
                     <label>Họ và tên</label>
                     <input class="form-control" type="text" name="order_owner" require>
 
@@ -50,38 +50,41 @@
                     <label>Email</label>
                     <input class="form-control" type="text" name="email" require>
                 </div>
-                <div class="col-6">
+                <div class="col-6 your_order">
                     <h4>Đơn hàng của bạn</h4>
-                    <table>
+                    <table style="margin-top: 30px">
                         <tr>
-                            <th>SẢN PHẨM</th>
-                            <th>SỐ LƯỢNG</th>
-                            <th>TẠM TÍNH</th>
+                            <th style="width: 200px">SẢN PHẨM</th>
+                            <th style="width: 200px">SỐ LƯỢNG</th>
+                            <th style="width: 200px">TẠM TÍNH</th>
                         </tr>
                         <?php $total = 0;
                             while ($results = $stmt->fetch(PDO::FETCH_ASSOC)) {
                             $temp_total = $results["price"] * $results["amount"];
                             $total = $total + $temp_total;?>
                         <tr>
-                            <td><?php echo $results["product_name"]?></td>
+                            <td style="height: 40px"><?php echo $results["product_name"]?></td>
                             <td><?php echo $results["amount"]?></td>
                             <td><?php echo number_format($temp_total)?> ₫</td>
                         </tr>
                         <?php }?>
                         <tr>
-                            <td colspan="2">Tạm tính</td>
+                            <td style="height: 40px" colspan="2">Tạm tính</td>
                             <td><?php echo number_format($total)?> ₫</td>
                         </tr>
                         <tr>
-                            <td colspan="2">Tổng</td>
+                            <td style="height: 40px" colspan="2">Tổng</td>
                             <td><?php echo number_format($total)?> ₫</td>
                         </tr>
                     </table>
                 </div>
-                <button><a href="index.php?act=cart">Quay lại giỏ hàng</a></button>
-                <input type="submit" name="order" value="Đặt hàng">
-            </form>
-        </div>
+            </div>
+            <input type="hidden" name="total" value=<?=$total?>>
+            <div class="btn">
+                <button class="back"><a style="text-decoration: none; color: #fff" href="index.php?act=cart">QUAY LẠI GIỎ HÀNG</a></button>
+                <input class="order" type="submit" name="order" value="ĐẶT HÀNG">
+            </div>
+        </form>
     </div>
 </body>
 

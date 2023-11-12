@@ -44,8 +44,7 @@ $pages = ceil($totalProducts / $productsPerPage);
         <b></b>
     </div>
     <div class="btn1">
-        <button type="button" class="btn btn-primary"><a href="index.php?act=add_product">Thêm sản phẩm</a></button>
-        <button>Xóa sản phẩm</button>
+        <button class="del">Xóa sản phẩm</button>
     </div>
     <div class="main">
         <div>
@@ -73,7 +72,6 @@ $pages = ceil($totalProducts / $productsPerPage);
                     <td>
                         <a href="index.php?act=update_product&&id=<?=$results["id_product"]?>" class="btn btn-primary" role="button" data-bs-toggle="button">Cập nhật</a>
                         <a href="index.php?act=add_product_detail&&id=<?=$results["id_product"]?>" class="btn btn-primary" role="button" data-bs-toggle="button">Thêm chi tiết</a>
-                        <button>Xóa</button>
                     </td>
                 </tr>
                 <?php }?>

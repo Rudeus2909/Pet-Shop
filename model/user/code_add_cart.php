@@ -4,7 +4,6 @@
     if (isset($_SESSION["id_user"]) && isset($_POST["add_cart"])){
         $id_product = $_POST["id_product"];
         $id_user = $_SESSION["id_user"];
-        $id_cart = $_SESSION["id_user"];
         $amount = $_POST["amount"];
         $i=0; $j=0;
 
@@ -54,8 +53,7 @@
                 $picture = $_POST["picture"];
                 $price = $_POST["price"];
 
-                $stmt1 = $conn->prepare('INSERT INTO web.cart (id_cart, id_user, id_product, product_name, amount, picture, price) VALUES (:id_cart, :id_user, :id_product, :product_name, :amount, :picture, :price)');
-                $stmt1->bindParam(':id_cart', $id_cart);
+                $stmt1 = $conn->prepare('INSERT INTO web.cart (id_user, id_product, product_name, amount, picture, price) VALUES (:id_user, :id_product, :product_name, :amount, :picture, :price)');
                 $stmt1->bindParam(':id_user', $id_user);
                 $stmt1->bindParam(':id_product', $id_product);
                 $stmt1->bindParam(':product_name', $product_name);
