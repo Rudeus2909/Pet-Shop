@@ -38,7 +38,7 @@
 .card{
     width: 240px;
     text-align: center;
-    height: 480px;
+    height: 500px;
     border: 1px solid lightgray;
     margin: 20px;
     border-radius: 20px;
@@ -61,24 +61,11 @@
 
 .caption{
     padding-top: 7rem;
-    padding-left: 1em;
+    padding-left: 2px;
     text-align: left;
-    line-height: 1.5em;
-    height: 15%;
+    line-height: 1.3em;
+    height: 5%;
     z-index: 20;
-}
-
-.caption p{
-    font-size: 1.5rem;
-}
-
-.rate{
-    display: flex;
-}
-
-.rate i{
-    color: gold;
-    margin-left: 2px;
 }
 
 /*Hiệu ứng hover ảnh*/
@@ -121,4 +108,30 @@
 }
 .description video{
     margin-left: 25%;
+}
+
+.product_detail{
+    text-decoration: none;
+    text-align: center;
+    margin-left: 40px;
+    color: #262626;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.product_detail:hover{
+    color: crimson;
+}
+
+.product_name{
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.price{
+    text-align: center;
+    font-size: 17px;
+    color: crimson;
+    font-weight: bold;
 }

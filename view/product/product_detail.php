@@ -74,7 +74,8 @@
                         </tr>
                     </tbody>
                 </table>
-                <p>Lưu ý: <i>Giá sản phẩm có thể thay đổi theo từng thời điểm. Inbox fanpage hoặc gọi hotline để biết
+                <p><span style="font-weight: 500; color: red; font-size: 20px">Lưu ý: </span><i>Giá sản phẩm có thể thay
+                        đổi theo từng thời điểm. Inbox fanpage hoặc gọi hotline để biết
                         thêm chi tiết</i></p>
                 <form action="index.php?act=add_cart" method="post">
                     <input type="hidden" name="id_product" value=<?=$results["id_product"]?>>
@@ -84,8 +85,8 @@
                     <input type="hidden" name="price" value="<?=$results["price"]?>">
                     <div class="amount">
                         <input type="button" value="-" id="minus" onclick="subtract()">
-                        <input class="text-center" type="number" name="amount" id="amount" step="1" min="1" value="1" placeholder
-                            inputmode="numeric">
+                        <input class="text-center" type="number" name="amount" id="amount" step="1" min="1" value="1"
+                            placeholder inputmode="numeric">
                         <input type="button" value="+" id="add" onclick="plus()">
                         <button class="add_cart" name="add_cart">THÊM VÀO GIỎ HÀNG</button>
                     </div>
@@ -103,10 +104,13 @@
                 <h2>SẢN PHẨM TƯƠNG TỰ</h2>
                 <b></b>
             </div>
-            <div class="similar_product">
-                <?php foreach($results2 as $product) {?>
-                <div>
-                    <?php echo "<img src='data:image/png;base64,".base64_encode($product->picture)."' style='width: 150px'>"?>
+            <div class="pets">
+                <?php foreach ($results2 as $results) { ?>
+                <div class="card" style="width: 16rem; margin: 10px;">
+                    <?php echo "<img style='border-radius: 5px;' src='data:image/png;base64,".base64_encode($results->picture)."' height='340px'>"?>
+                    <div class="card-body">
+                        <p class="card-text"><?php echo $results->product_name?></p>
+                    </div>
                 </div>
                 <?php }?>
             </div>
@@ -155,21 +159,22 @@
     <div class="wrapper">
         <div class="row">
 
-            <div class="col-6 img">
+            <div class="col-5 img">
                 <?php echo "<img src='data:image/png;base64,".base64_encode($results["picture"])."' style='width: 396px; height: 508px;'>"?>
             </div>
 
-            <div class="col-6 description">
+            <div class="col-7 description">
                 <h1><?php echo $results["product_name"]?></h1>
 
                 <b></b>
                 <span>Giá: <?php echo number_format($results["price"])?> ₫</span>
-                <table>
-                    <tr>
-                        <td><?php echo $results1["detail_description"]?></td>
+                <table style="border: none;">
+                    <tr style="border: none;">
+                        <td style="border: none;"><?php echo $results1["detail_description"]?></td>
                     </tr>
                 </table>
-                <p>Lưu ý: <i>Giá sản phẩm có thể thay đổi theo từng thời điểm. Inbox fanpage hoặc gọi hotline để biết
+                <p><span style="font-weight: 500; color: red; font-size: 20px">Lưu ý: </span><i>Giá sản phẩm có thể thay
+                        đổi theo từng thời điểm. Inbox fanpage hoặc gọi hotline để biết
                         thêm chi tiết</i></p>
                 <form action="index.php?act=add_cart" method="post">
                     <input type="hidden" name="id_product" value=<?=$results["id_product"]?>>
@@ -179,21 +184,32 @@
                     <input type="hidden" name="price" value="<?=$results["price"]?>">
                     <div class="amount">
                         <input type="button" value="-" id="minus" onclick="subtract()">
-                        <input type="number" name="amount" id="amount" step="1" min="1" value="1" placeholder
-                            inputmode="numeric">
+                        <input class="text-center" type="number" name="amount" id="amount" step="1" min="1" value="1"
+                            placeholder inputmode="numeric">
                         <input type="button" value="+" id="add" onclick="plus()">
+                        <button class="add_cart" name="add_cart">THÊM VÀO GIỎ HÀNG</button>
                     </div>
-                    <button name="add_cart">Thêm vào giỏ hàng</button>
                 </form>
+                <div class="contact">
+                    <button class="zalo">CHAT ZALO</button>
+                    <button class="hotline">GỌI HOTLINE</button>
+                </div>
             </div>
         </div>
 
         <div>
-            <h2>SẢN PHẨM TƯƠNG TỰ</h2>
-            <div class="similar_product">
-                <?php foreach($results2 as $product) {?>
-                <div>
-                    <?php echo "<img src='data:image/png;base64,".base64_encode($product->picture)."' style='width: 150px'>"?>
+            <div class="title">
+                <b></b>
+                <h2>SẢN PHẨM TƯƠNG TỰ</h2>
+                <b></b>
+            </div>
+            <div class="pets">
+                <?php foreach ($results2 as $results) { ?>
+                <div class="card" style="width: 16rem; margin: 10px;">
+                    <?php echo "<img style='border-radius: 5px;' src='data:image/png;base64,".base64_encode($results->picture)."' height='340px'>"?>
+                    <div class="card-body">
+                        <p class="card-text"><?php echo $results->product_name?></p>
+                    </div>
                 </div>
                 <?php }?>
             </div>

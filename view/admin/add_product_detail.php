@@ -1,33 +1,35 @@
 <?php
     include "../apps/config/connectdb.php";
 
-    //Lấy id_product bằng phương thức GET
-    if (isset($_GET["id"])) {
-        $id_product = $_GET["id"];
-    }
+    //Kiểm tra xem người sử dụng có phải admin hay không?
+    if (isset($_SESSION["role"]) && $_SESSION["role"] == "admin") {
+        //Lấy id_product bằng phương thức GET
+        if (isset($_GET["id"])) {
+            $id_product = $_GET["id"];
+        }
 
-    //Kiểm tra trong bảng product_detail xem có chi tiết sản phẩm hay chưa
-    //Xuất dữ liệu trong bảng product_detail dựa trên id_product
-    $stmt = $conn->prepare('SELECT * FROM web.product_detail WHERE id_product=:id_product');
-    $stmt->bindParam(':id_product', $id_product);
-    $stmt->execute();
-    //Fetch dữ liệu theo row
-    $results = $stmt->fetchAll(PDO::FETCH_OBJ);
-    //Dùng hàm count() để đếm số dòng dữ liệu
-    $count = count($results);
-    //Nếu chưa có chi tiết sản phẩm thì hiển thị trang thêm chi tiết sản phẩm
-    if ($count == 0){
-        //Kiểm tra danh mục của id_product có phải là Phụ kiện hay không
-        //Fetch dữ liệu trong CSDL
-        $stmt1 = $conn->prepare('SELECT * FROM web.product JOIN web.category ON web.product.id_category=web.category.id_category
-                                                            WHERE id_product=:id_product AND web.product.id_category="3"');
-        $stmt1->bindParam('id_product', $id_product);
-        $stmt1->execute();
-        $results1 = $stmt1->fetchAll(PDO::FETCH_OBJ);
+        //Kiểm tra trong bảng product_detail xem có chi tiết sản phẩm hay chưa
+        //Xuất dữ liệu trong bảng product_detail dựa trên id_product
+        $stmt = $conn->prepare('SELECT * FROM web.product_detail WHERE id_product=:id_product');
+        $stmt->bindParam(':id_product', $id_product);
+        $stmt->execute();
+        //Fetch dữ liệu theo row
+        $results = $stmt->fetchAll(PDO::FETCH_OBJ);
         //Dùng hàm count() để đếm số dòng dữ liệu
-        $count1 = count($results1);
-        //Nếu sản phẩm là thú cưng thì hiển thị form thêm chi tiết thú cưng 
-        if ($count1 == 0){
+        $count = count($results);
+        //Nếu chưa có chi tiết sản phẩm thì hiển thị trang thêm chi tiết sản phẩm
+        if ($count == 0){
+            //Kiểm tra danh mục của id_product có phải là Phụ kiện hay không
+            //Fetch dữ liệu trong CSDL
+            $stmt1 = $conn->prepare('SELECT * FROM web.product JOIN web.category ON web.product.id_category=web.category.id_category
+                                                            WHERE id_product=:id_product AND web.product.id_category="3"');
+            $stmt1->bindParam('id_product', $id_product);
+            $stmt1->execute();
+            $results1 = $stmt1->fetchAll(PDO::FETCH_OBJ);
+            //Dùng hàm count() để đếm số dòng dữ liệu
+            $count1 = count($results1);
+            //Nếu sản phẩm là thú cưng thì hiển thị form thêm chi tiết thú cưng 
+            if ($count1 == 0){
 ?>
 
 <!DOCTYPE html>
@@ -148,11 +150,17 @@
 <?php
         }
     }
-    //Nếu chưa thì xuất ra thông báo và trở lại trang hiển thị sản phẩm
+    //Nếu đã có chi tiết mô tả thì xuất thông báo và trở lại trang hiển thị sản phẩm
     else {
         echo '<script type="text/javascript">';
         echo 'alert("Sản phẩm này đã có các chi tiết mô tả!");';
         echo 'window.history.back();'; 
         echo '</script>';
     }
+} else {
+    //Nếu không phải admin thì không cho phép truy cập
+    echo '<script type="text/javascript">';
+    echo 'window.location.href="index.php?act=home";'; 
+    echo '</script>';
+}
 ?>

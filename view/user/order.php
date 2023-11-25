@@ -1,7 +1,7 @@
 <?php
     include "../apps/config/connectdb.php";
-
-    if (isset($_SESSION["id_user"])) {
+    //Kiểm tra xem người sử dụng có phải user hay không?
+    if (isset($_SESSION["id_user"]) && isset($_SESSION["role"]) && $_SESSION["role"] == "user") {
         $id_user = $_SESSION["id_user"];
 
         $stmt = $conn->prepare('SELECT * FROM web.cart WHERE id_user=:id_user');
@@ -14,7 +14,6 @@
             echo 'alert("Không thể thanh toán khi chưa có sản phẩm trong giỏ");';
             echo 'window.location.href="index.php?act=home";'; 
             echo '</script>';
-        }
     }
 ?>
 
@@ -87,5 +86,11 @@
         </form>
     </div>
 </body>
-
 </html>
+<?php } else {
+        //Nếu không phải user thì xuất thông báo
+        echo '<script type="text/javascript">';
+        echo 'alert("Bạn không phải người dùng thành viên");';
+        echo 'window.history.back();'; 
+        echo '</script>';
+}?>

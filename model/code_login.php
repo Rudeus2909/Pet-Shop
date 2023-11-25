@@ -16,6 +16,7 @@ if(isset($_POST['signin'])){
     if ($count > 0){
         $row = $stmt->fetch();
         $_SESSION['id_user'] = $row['id_user'];
+        $_SESSION['role'] = $row['role'];
         //Kiểm tra vai trò của user
         if($row["role"]=="admin"){
             //Nếu là admin thì chuyển hướng đến trang quản lý

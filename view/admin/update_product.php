@@ -53,14 +53,14 @@
         <div class="row">
             <div class="col-4">
                 <div class="form-floating mb-3">
-                    <input type="text" name="product_name" class="form-control" required id="floatingInput"
-                        placeholder=" " value=<?=$results["product_name"]?>>
-                    <label for="floatingInput">Mã sản phẩm</label>
+                    <textarea class="form-control" name="product_name" placeholder=""
+                        id="floatingTextarea"><?=$results["product_name"]?></textarea>
+                    <label for="floatingTextarea">Tên sản phẩm</label>
                 </div>
 
                 <div class="form-floating mb-3">
                     <input type="text" name="price" class="form-control" required id="floatingInput" placeholder=" "
-                        value=<?=number_format($results["price"])?>>
+                        value=<?=$results["price"]?>>
                     <label for="floatingInput">Giá</label>
                 </div>
 

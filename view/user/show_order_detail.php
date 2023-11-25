@@ -1,17 +1,20 @@
 <?php
     include "../apps/config/connectdb.php";
 
-    if (isset($_SESSION["id_user"]) && isset($_POST["order_detail"])) {
-        $id_order = $_POST["id_order"];
-        $stmt = $conn->prepare('SELECT * FROM web.order_detail WHERE id_order=:id_order');
-        $stmt->bindParam(':id_order', $id_order);
-        $stmt->execute();
+    //Kiểm tra xem người sử dụng có phải user hay không?
+    if (isset($_SESSION["id_user"]) && isset($_SESSION["role"]) && $_SESSION["role"] == "user") {
 
-        $stmt1 = $conn->prepare('SELECT * FROM web.orders WHERE id_order=:id_order');
-        $stmt1->bindParam(':id_order', $id_order);
-        $stmt1->execute();
-        $results1 = $stmt1->fetch(PDO::FETCH_ASSOC);
-    }
+        if (isset($_POST["order_detail"])) {
+            $id_order = $_POST["id_order"];
+            $stmt = $conn->prepare('SELECT * FROM web.order_detail WHERE id_order=:id_order');
+            $stmt->bindParam(':id_order', $id_order);
+            $stmt->execute();
+
+            $stmt1 = $conn->prepare('SELECT * FROM web.orders WHERE id_order=:id_order');
+            $stmt1->bindParam(':id_order', $id_order);
+            $stmt1->execute();
+            $results1 = $stmt1->fetch(PDO::FETCH_ASSOC);
+        }
 ?>
 
 <!DOCTYPE html>
@@ -113,5 +116,11 @@
 
 
 </body>
-
 </html>
+<?php } else {
+        //Nếu không phải user thì xuất thông báo
+        echo '<script type="text/javascript">';
+        echo 'alert("Bạn không phải người dùng thành viên");';
+        echo 'window.history.back();'; 
+        echo '</script>';
+}?>

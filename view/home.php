@@ -2,7 +2,7 @@
     include "../apps/config/connectdb.php";
 
     $stmt = $conn->prepare('SELECT * FROM web.product JOIN web.type ON web.product.id_type=web.type.id_type WHERE web.product.id_product = "1" OR web.product.id_product = "8"
-    OR web.product.id_product = "34" OR web.product.id_product = "38" OR web.product.id_product = "24"');
+    OR web.product.id_product = "35" OR web.product.id_product = "38" OR web.product.id_product = "24"');
     $stmt->execute();
     $results = $stmt->fetchAll(PDO::FETCH_OBJ);
 

@@ -40,29 +40,8 @@
             case 'signout':
                 unset($_SESSION['username']);
                 unset($_SESSION["id_user"]);
+                unset($_SESSION["role"]);
                 header('Location: index.php?act=home');
-                break;
-            
-            //Giỏ hàng
-            case 'cart':
-                include "../view/header.php";
-                include "../view/user/cart.php";
-                include "../view/footer.php";
-                break;
-            
-            //Code xử lý thêm sản phẩm vào giỏ    
-            case 'add_cart':
-                include "../model/user/code_add_cart.php";
-                break;  
-            
-            //Code xử lý xóa sản phẩm khỏi giỏ
-            case 'del_cart_product':
-                include "../model/user/code_delete_cart_product.php";
-                break;
-            
-            //Code xử lý cập nhật số lượng sản phẩm trong giỏ
-            case 'update_cart':
-                include "../model/user/code_update_cart.php";
                 break;
             
             //Hiển thị kết quả tìm kiếm
@@ -169,6 +148,8 @@
                 include "../view/product/product_detail.php";
                 include "../view/footer.php";
                 break;
+            
+            //NGƯỜI DÙNG THÀNH VIÊN
 
             //Hiển thị trang thông tin user
             case 'user_info':
@@ -180,6 +161,28 @@
             //Code xử lý cập nhật thông tin và đổi mật khẩu user
             case 'code_user_info':
                 include "../model/user/code_user_info.php";
+                break;
+            
+            //Giỏ hàng
+            case 'cart':
+                include "../view/header.php";
+                include "../view/user/cart.php";
+                include "../view/footer.php";
+                break;
+            
+            //Code xử lý thêm sản phẩm vào giỏ    
+            case 'add_cart':
+                include "../model/user/code_add_cart.php";
+                break;  
+            
+            //Code xử lý xóa sản phẩm khỏi giỏ
+            case 'del_cart_product':
+                include "../model/user/code_delete_cart_product.php";
+                break;
+            
+            //Code xử lý cập nhật số lượng sản phẩm trong giỏ
+            case 'update_cart':
+                include "../model/user/code_update_cart.php";
                 break;
 
             //Hiển thị trang đặt hàng
@@ -200,6 +203,8 @@
                 include "../view/user/show_order_detail.php";
                 include "../view/footer.php";
                 break;    
+
+            //NGƯỜI QUẢN TRỊ
 
             //Hiển thị trang chủ admin
             case 'admin':
@@ -246,6 +251,11 @@
                 include "../view/admin/fetch_product.php";
                 break;
 
+            //Code xử lý xóa sản phẩm
+            case 'delete_product':
+                include "../model/admin/code_delete_product.php";
+                break;
+
             //Hiển thị trang cập nhật sản phẩm
             case 'update_product':
                 include "../view/admin/header_admin.php";
@@ -272,6 +282,12 @@
             case 'order_manage':
                 include "../view/admin/header_admin.php";
                 include "../view/admin/order_manage.php";
+                break;
+
+            //Hiển thị trang quản lý chi tiết đơn hàng
+            case 'manage_order_detail':
+                include "../view/admin/header_admin.php";
+                include "../view/admin/manage_order_detail.php";
                 break;
 
             //Hiển thị trang chủ website

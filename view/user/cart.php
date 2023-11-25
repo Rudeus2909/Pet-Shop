@@ -1,7 +1,8 @@
 <?php
     include "../apps/config/connectdb.php";
 
-    if (isset($_SESSION["id_user"])) {
+    //Kiểm tra xem người sử dụng có phải user hay không?
+    if (isset($_SESSION["id_user"]) && isset($_SESSION["role"]) && $_SESSION["role"] == "user") {
         $id_user = $_SESSION["id_user"];
 
         $stmt = $conn->prepare('SELECT * FROM web.cart WHERE id_user=:id_user');
@@ -111,11 +112,11 @@
 
 </html>
 <?php
-    }
-
+        }
     } else {
+        //Nếu không phải user thì xuất thông báo
         echo '<script type="text/javascript">';
-        echo 'alert("Bạn cần phải đăng nhập");';
+        echo 'alert("Bạn không phải người dùng thành viên");';
         echo 'window.history.back();'; 
         echo '</script>';
     }

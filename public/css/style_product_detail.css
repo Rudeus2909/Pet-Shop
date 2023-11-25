@@ -134,3 +134,17 @@ table, td {
     background: rgb(238, 56, 56);
     border-radius: 2px;
 }
+
+.pets{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1500px;
+}
+
+.pets .card .card-body .card-text{
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 700;
+}

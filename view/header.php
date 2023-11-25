@@ -54,7 +54,7 @@
                         <li><a href="index.php?act=about_us">GIỚI THIỆU</a></li>
                         <?php
                             if (isset($_SESSION['username'])){
-                                echo '<li><a href="index.php?act=user_info">'.$_SESSION['username'].'</a></li>';
+                                echo '<li><a style="text-transform: uppercase;" href="index.php?act=user_info">'.$_SESSION['username'].'</a></li>';
                                 echo '<li><a href="index.php?act=signout">ĐĂNG XUẤT</a></li>';
                             }else{
                                 echo '<li><a href="index.php?act=register">ĐĂNG KÝ</a></li>';
@@ -70,7 +70,7 @@
                     </div>
                 </div>
                 <form action="index.php?act=search" method="post" id="search-box">
-                    <input type="text" id="search-text" name="keyword" placeholder="Tìm kiếm...">
+                    <input type="text" id="search-text" name="keyword" require placeholder="Tìm kiếm...">
                     <button id="search-btn" name="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>

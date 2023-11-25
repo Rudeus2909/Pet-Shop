@@ -199,3 +199,43 @@ th{
     background: rgb(238, 56, 56);
     border-radius: 2px;
 }
+
+.table-hover tr th{
+    background-color: #d8d5d5;
+}
+
+#order_code{
+    border-right: none;
+    font-weight: 700;
+}
+
+#icon{
+    border-left: none;
+    text-align: right;
+}
+
+#icon a{
+    font-size: 17px;
+    color: #000000;
+}
+
+#icon a:hover{
+    color: crimson;
+}
+
+
+/*Quản lý chi tiết đơn hàng*/
+.manage_order_detail{
+    margin-left: 100px;
+}
+
+#manage_order_detail td{
+    background: #f8f5f5;
+    border: none;
+}
+
+#weight{
+    width: 200px;
+    text-align: left;
+    font-weight: 700;
+}

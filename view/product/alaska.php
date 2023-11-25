@@ -31,15 +31,9 @@
                 <?php echo "<img src='data:image/jpeg;base64,".base64_encode($row['picture'])."'>"?>
             </div>
             <div class="caption">
-                <p class="rate">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </p>
                 <p class="product_name"><?php echo $row["product_name"]?></p>
-                <a href="index.php?act=product_detail&&id=<?=$row['id_product'];?>">Chi tiết sản phẩm</a>
+                <p class="price"><?php echo number_format($row["price"])?> ₫</p>
+                <a class="product_detail" style="text-decoration: none;" href="index.php?act=product_detail&&id=<?=$row['id_product'];?>">Chi tiết sản phẩm</a>
             </div>
         </div>
         <?php };?>

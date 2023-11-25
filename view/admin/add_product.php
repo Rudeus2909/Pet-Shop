@@ -1,11 +1,13 @@
 <?php
     include "../apps/config/connectdb.php";
 
-    $stmt = $conn->prepare('SELECT * FROM web.category');
-    $stmt->execute();
+    //Kiểm tra xem người sử dụng có phải admin hay không?
+    if (isset($_SESSION["role"]) && $_SESSION["role"] == "admin") {
+        $stmt = $conn->prepare('SELECT * FROM web.category');
+        $stmt->execute();
 
-    $stmt1 = $conn->prepare('SELECT * FROM web.type');
-    $stmt1->execute();
+        $stmt1 = $conn->prepare('SELECT * FROM web.type');
+        $stmt1->execute();
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +53,7 @@
                     </select>
                 </div>
                 <div class="input-group mb-3">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Mã sản phẩm</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Tên sản phẩm</span>
                     <input type="text" name="product_name" class="form-control" aria-label="Sizing example input"
                         aria-describedby="inputGroup-sizing-default">
                 </div>
@@ -76,5 +78,11 @@
         </div>
     </div>
 </body>
-
 </html>
+<?php } else {
+        //Nếu không phải admin thì không cho phép truy cập
+        echo '<script type="text/javascript">';
+        echo 'alert("Bạn không có quyền truy cập");';
+        echo 'window.location.href="index.php?act=home";'; 
+        echo '</script>';
+}?>

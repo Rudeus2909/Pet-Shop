@@ -1,11 +1,13 @@
 <?php
     include "../apps/config/connectdb.php";
-
-    $username = $_SESSION['username'];
-    $stmt = $conn->prepare('SELECT * FROM web.user WHERE username=:username');
-    $stmt->bindParam(':username', $username);
-    $stmt->execute();
-    $results = $stmt->fetch(PDO::FETCH_ASSOC);
+    //Kiểm tra xem người sử dụng có phải admin hay không?
+    if (isset($_SESSION["role"]) && $_SESSION["role"] == "admin") {
+        
+        $username = $_SESSION['username'];
+        $stmt = $conn->prepare('SELECT * FROM web.user WHERE username=:username');
+        $stmt->bindParam(':username', $username);
+        $stmt->execute();
+        $results = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -127,5 +129,11 @@
         </div>
     </div>
 </body>
-
 </html>
+<?php } else {
+        //Nếu không phải admin thì không cho phép truy cập
+        echo '<script type="text/javascript">';
+        echo 'alert("Bạn không có quyền truy cập");';
+        echo 'window.location.href="index.php?act=home";'; 
+        echo '</script>';
+}?>
