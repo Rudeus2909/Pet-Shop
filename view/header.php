@@ -28,7 +28,7 @@
                         <li><a href="index.php">TRANG CHỦ</a></li>
                         <li><a href="#">CHÓ CẢNH</a>
                             <ul class="sub-menu">
-                                <li><a href="index.php?act=als">ALASKA</a></li>
+                                <li><a href="index.php?act=alk">ALASKA</a></li>
                                 <li><a href="index.php?act=pd">POODLE</a></li>
                                 <li><a href="index.php?act=sm">SAMOYED</a></li>
                                 <li><a href="index.php?act=akt">AKITA INU</a></li>

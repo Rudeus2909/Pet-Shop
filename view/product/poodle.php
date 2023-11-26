@@ -31,7 +31,8 @@
                 <?php echo "<img src='data:image/png;base64,".base64_encode($row['picture'])."'>"?>
             </div>
             <div class="caption">
-                <p class="product_name"><?php echo $row["product_name"]?></p>
+                <p class="product_name"><a class="product_link" style="text-decoration: none;"
+                        href="index.php?act=product_detail&&id=<?=$row["id_product"]?>"><?php echo $row["product_name"]?></a></p>
                 <p class="price"><?php echo number_format($row["price"])?> ₫</p>
                 <a class="product_detail" style="text-decoration: none;" href="index.php?act=product_detail&&id=<?=$row['id_product'];?>">Chi tiết sản phẩm</a>
             </div>

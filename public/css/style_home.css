@@ -100,9 +100,32 @@ td {
     max-width: 1500px;
 }
 
+.pets .card{
+    overflow: hidden;
+}
+
 .pets .card .card-body .card-text{
     text-align: center;
     font-size: 18px;
     text-transform: uppercase;
     font-weight: 700;
+}
+
+.pets .card .card-body .card-text .card_link{
+    color: #262626;
+    text-decoration: none;
+}
+
+.pets .card .card-body .card-text .card_link:hover{
+    color: crimson;
+}
+
+.pets .card img{
+    object-fit: cover;
+    transition: all 0.3s ease-in-out;
+    z-index: 10;
+}
+
+.pets .card img:hover{
+    transform: scale(1.05);
 }

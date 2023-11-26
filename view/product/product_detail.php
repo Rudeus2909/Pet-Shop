@@ -109,7 +109,9 @@
                 <div class="card" style="width: 16rem; margin: 10px;">
                     <?php echo "<img style='border-radius: 5px;' src='data:image/png;base64,".base64_encode($results->picture)."' height='340px'>"?>
                     <div class="card-body">
-                        <p class="card-text"><?php echo $results->product_name?></p>
+                        <p class="card-text"><a class="card_link"
+                                href="index.php?act=product_detail&&id=<?=$results->id_product?>"><?php echo $results->product_name?></a>
+                        </p>
                     </div>
                 </div>
                 <?php }?>
@@ -208,7 +210,10 @@
                 <div class="card" style="width: 16rem; margin: 10px;">
                     <?php echo "<img style='border-radius: 5px;' src='data:image/png;base64,".base64_encode($results->picture)."' height='340px'>"?>
                     <div class="card-body">
-                        <p class="card-text"><?php echo $results->product_name?></p>
+                        <p class="card-text">
+                            <a class="card_link"
+                                href="index.php?act=product_detail&&id=<?=$results->id_product?>"><?php echo $results->product_name?></a>
+                        </p>
                     </div>
                 </div>
                 <?php }?>

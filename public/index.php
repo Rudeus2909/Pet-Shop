@@ -59,7 +59,7 @@
                 break;
             
             //Sản phẩm Chó Alaska
-            case 'als':
+            case 'alk':
                 include "../view/header.php";
                 include "../view/product/alaska.php";
                 include "../view/footer.php";

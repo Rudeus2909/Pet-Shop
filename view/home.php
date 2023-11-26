@@ -61,7 +61,8 @@
     <div class="card" style="width: 16rem; margin: 10px;">
         <?php echo "<img style='border-radius: 5px;' src='data:image/png;base64,".base64_encode($results->picture)."' height='340px'>"?>
         <div class="card-body">
-            <p class="card-text"><?php echo $results->type_name?></p>
+            <p class="card-text"><a class="card_link"
+                    href="index.php?act=<?=$results->type_detail?>"><?php echo $results->type_name?></a></p>
         </div>
     </div>
     <?php }?>
@@ -77,7 +78,8 @@
     <div class="card" style="width: 16rem; margin: 30px;">
         <?php echo "<img style='border-radius: 5px;' src='data:image/png;base64,".base64_encode($results1->picture)."' height='240px'>"?>
         <div class="card-body">
-            <p class="card-text"><?php echo $results1->type_name?></p>
+            <p class="card-text"><a class="card_link"
+                    href="index.php?act=<?=$results1->type_detail?>"><?php echo $results1->type_name?></a></p>
         </div>
     </div>
     <?php }?>

@@ -120,7 +120,7 @@ table, td {
     width: 150px;
     height: 40px;
     border: none;
-    background: rgb(56, 168, 238);
+    background: rgb(61, 148, 201);
     border-radius: 2px;
 }
 
@@ -135,6 +135,23 @@ table, td {
     border-radius: 2px;
 }
 
+.add_cart:hover{
+    background: rgb(13, 93, 144);
+    color: #fff;
+}
+
+.zalo:hover{
+    background: rgb(13, 93, 144);
+}
+
+.hotline:hover{
+    background: rgb(161, 36, 36);
+}
+
+#minus:hover, #add:hover{
+    background: #cdcbcb;
+}
+
 .pets{
     display: flex;
     justify-content: center;
@@ -142,9 +159,32 @@ table, td {
     max-width: 1500px;
 }
 
+.pets .card{
+    overflow: hidden;
+}
+
 .pets .card .card-body .card-text{
     text-align: center;
     font-size: 18px;
     text-transform: uppercase;
     font-weight: 700;
+}
+
+.pets .card .card-body .card-text .card_link{
+    color: #262626;
+    text-decoration: none;
+}
+
+.pets .card .card-body .card-text .card_link:hover{
+    color: crimson;
+}
+
+.pets .card img{
+    object-fit: cover;
+    transition: all 0.3s ease-in-out;
+    z-index: 10;
+}
+
+.pets .card img:hover{
+    transform: scale(1.05);
 }

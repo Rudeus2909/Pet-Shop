@@ -68,6 +68,14 @@
     z-index: 20;
 }
 
+.product_link{
+    color: #262626;
+}
+
+.product_link:hover{
+    color: crimson;
+}
+
 /*Hiệu ứng hover ảnh*/
 .image img:hover{
     transform: scale(1.05);
