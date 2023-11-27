@@ -76,16 +76,37 @@
                             <td><?php echo number_format($total)?> ₫</td>
                         </tr>
                     </table>
+
+                    <div class="payment_methods">
+                        <h4>Phương thức thanh toán</h4>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                value="option1">
+                            <label class="form-check-label" for="inlineRadio1">Chuyển khoản ngân hàng</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                value="option1">
+                            <label class="form-check-label" for="inlineRadio1">Ví điện tử</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                value="option1">
+                            <label class="form-check-label" for="inlineRadio1">Visa</label>
+                        </div>
+                    </div>
                 </div>
             </div>
             <input type="hidden" name="total" value=<?=$total?>>
             <div class="btn">
-                <button class="back"><a style="text-decoration: none; color: #fff" href="index.php?act=cart">QUAY LẠI GIỎ HÀNG</a></button>
+                <button class="back"><a style="text-decoration: none; color: #fff" href="index.php?act=cart">QUAY LẠI
+                        GIỎ HÀNG</a></button>
                 <input class="order" type="submit" name="order" value="ĐẶT HÀNG">
             </div>
         </form>
     </div>
 </body>
+
 </html>
 <?php } else {
         //Nếu không phải user thì xuất thông báo

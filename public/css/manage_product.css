@@ -239,3 +239,18 @@ th{
     text-align: left;
     font-weight: 700;
 }
+
+.confirm_order{
+    margin: 40px 0 0 100px;
+}
+
+.confirm_order button{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.order_info{
+    margin-left: 140px;
+}

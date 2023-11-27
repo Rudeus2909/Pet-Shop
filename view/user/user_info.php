@@ -169,6 +169,14 @@
                                         <input type="hidden" name="id_order" value="<?=$results1["id_order"]?>">
                                         <input id="order_detail" type="submit" name="order_detail" value="Xem chi tiết">
                                     </form>
+                                    <?php if ($results1["order_status"] == "Đã xác nhận" || $results1["order_status"] == "Đã hủy") {?>
+                                    <button type="button" id="cancel_order" class="btn btn-danger" disabled>Hủy đơn hàng</button>
+                                    <?php } else {?>
+                                    <form action="index.php?act=cancel_order" method="post">
+                                        <input type="hidden" name="id_order" value="<?=$results1["id_order"]?>">
+                                        <button type="submit" id="cancel_order" name="cancel_order" class="btn-danger">Hủy đơn hàng</button>
+                                    </form>
+                                    <?php }?>
                                 </td>
                             </tr>
                             <?php }?>

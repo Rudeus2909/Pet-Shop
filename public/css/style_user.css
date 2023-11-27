@@ -146,10 +146,29 @@ td {
 #order_detail{
     font-weight: 700;
     color: #fff;
-    margin-left: 2px;
+    margin: 5px 5px;
     width: 120px;
     height: 30px;
     border: none;
     background: rgb(56, 168, 238);
     border-radius: 2px;
+}
+
+#cancel_order{
+    font-weight: 700;
+    color: #fff;
+    margin: 5px 5px;
+    padding: 5px;
+    width: 120px;
+    border: none;
+    background: rgb(239, 47, 47);
+    border-radius: 2px;
+}
+
+#order_detail:hover{
+    background: rgb(47, 141, 199);
+}
+
+#cancel_order:hover{
+    background: rgb(194, 39, 39);
 }

@@ -30,6 +30,11 @@
     $stmt4->execute();
     $results4 = $stmt4->fetchAll(PDO::FETCH_OBJ);
     $count4 = count($results4);
+    
+    //Xuất doanh thu
+    $stmt5 = $conn->prepare('SELECT SUM(order_total) as revenue FROM web.orders WHERE order_status = "đã xác nhận"');
+    $stmt5->execute();
+    $results5 = $stmt5->fetch(PDO::FETCH_OBJ);
 ?>
 
 <!DOCTYPE html>
@@ -81,6 +86,13 @@
             <span class="orders">
                 <p>Tổng số đơn hàng: <?php echo $count4?></p>
                 <img src="img/admin/orders.png" width="100px" alt="">
+            </span>
+        </div>
+
+        <div>
+            <span class="revenue">
+                <p>Doanh thu: <?php echo number_format($results5->revenue)?> ₫</p>
+                <img src="img/admin/salary.png" width="100px" alt="">
             </span>
         </div>
     </div>

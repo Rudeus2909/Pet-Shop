@@ -162,7 +162,19 @@
             case 'code_user_info':
                 include "../model/user/code_user_info.php";
                 break;
-            
+
+            //Hiển thị các đơn đặt hàng
+            case 'show_orders':
+                include "../view/header.php";
+                include "../view/user/show_order_detail.php";
+                include "../view/footer.php";
+                break;
+
+            //Code xử lý hủy đơn hàng
+            case 'cancel_order':
+                include "../model/user/code_cancel_order.php";
+                break;
+
             //Giỏ hàng
             case 'cart':
                 include "../view/header.php";
@@ -195,13 +207,6 @@
             //Code xử lý đặt hàng
             case 'add_order':
                 include "../model/user/code_add_order.php";
-                break;
-            
-            //Hiển thị các đơn đặt hàng
-            case 'show_orders':
-                include "../view/header.php";
-                include "../view/user/show_order_detail.php";
-                include "../view/footer.php";
                 break;    
 
             //NGƯỜI QUẢN TRỊ
@@ -288,6 +293,11 @@
             case 'manage_order_detail':
                 include "../view/admin/header_admin.php";
                 include "../view/admin/manage_order_detail.php";
+                break;
+
+            //Code xử lý xác nhận trạng thái đơn hàng
+            case 'code_manage_order':
+                include "../model/admin/code_manage_order.php";
                 break;
 
             //Hiển thị trang chủ website
