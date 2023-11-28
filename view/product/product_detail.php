@@ -61,16 +61,19 @@
                 <table>
                     <tbody>
                         <tr>
-                            <td>Giống: <?php echo $results1["breed"]?></td>
-                            <td>Tháng tuổi: <?php echo $results1["age"]?></td>
+                            <td><i>Giống: </i><?php echo $results1["breed"]?></td>
+                            <td><i>Tháng tuổi: </i><?php echo $results1["age"]?></td>
                         </tr>
                         <tr>
-                            <td>Màu: <?php echo $results1["color"]?></td>
-                            <td>Giới tính: <?php echo $results1["gender"]?></td>
+                            <td><i>Màu: </i><?php echo $results1["color"]?></td>
+                            <td><i>Giới tính: </i><?php echo $results1["gender"]?></td>
                         </tr>
                         <tr>
-                            <td>Tiêm phòng: <?php echo $results1["vaccination"]?></td>
-                            <td>Tình trạng sức khỏe: <?php echo $results1["health_condition"]?></td>
+                            <td><i>Tiêm phòng: </i><?php echo $results1["vaccination"]?></td>
+                            <td><i>Tình trạng sức khỏe: </i><?php echo $results1["health_condition"]?></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><?php echo $results1["detail_description"]?></td>
                         </tr>
                     </tbody>
                 </table>

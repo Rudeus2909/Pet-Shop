@@ -69,14 +69,14 @@
                     <div class="input-group mb-3">
                         <label class="input-group-text" for="inputGroupSelect01">Tình trạng đơn hàng</label>
                         <select class="form-select" id="inputGroupSelect01" name="order_status">
-                            <option selected><?php echo $results["order_status"]?></option>
+                            <option value="<?=$results["order_status"]?>" selected><?php echo $results["order_status"]?></option>
                             <option value="Chờ xác nhận">Chờ xác nhận</option>
                             <option value="Đã xác nhận">Xác nhận đơn hàng</option>
                             <option value="Đã hủy">Hủy đơn hàng</option>
                         </select>
+                        <input type="hidden" name="id_order" value="<?=$results["id_order"]?>">
+                        <button name="confirm" class="btn btn-success" type="submit">Cập nhật</button>
                     </div>
-                    <input type="hidden" name="id_order" value="<?=$results["id_order"]?>">
-                    <button type="submit" name="confirm" class="btn btn-success">Xác nhận</button>
                 </form>
             </div>
         </div>
@@ -115,6 +115,7 @@
         </div>
     </div>
 </body>
+
 </html>
 <?php } else {
         //Nếu không phải admin thì không cho phép truy cập

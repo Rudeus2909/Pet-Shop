@@ -56,5 +56,10 @@ if(isset($_POST['register'])) {
             echo '</script>';
         }
     }
+} else {
+    echo '<script type="text/javascript">';
+    echo 'alert("Lỗi");';
+    echo 'window.location.href="index.php?act=home";'; 
+    echo '</script>';
 }
 ?>

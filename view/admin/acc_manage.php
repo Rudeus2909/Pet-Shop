@@ -72,24 +72,26 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <span>
-                                    <label>ID tài khoản người dùng</label>
-                                    <select name="id_user" id="id_user">
+                                <div class="input-group mb-3">
+                                    <label class="input-group-text" for="inputGroupSelect01">ID tài khoản người
+                                        dùng</label>
+                                    <select name="id_user" id="id_user" class="form-select" id="inputGroupSelect01">
+                                        <option selected>Chọn...</option>
                                         <?php while ($results1 = $stmt1->fetch(PDO::FETCH_ASSOC)){?>
                                         <option value="<?php echo $results1["id_user"]?>">
                                             <?php echo $results1["id_user"]?>
                                         </option>
                                         <?php }?>
                                     </select>
-                                </span>
-                                <span>
-                                    <label>Vai trò</label>
-                                    <select name="role" id="role">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <label class="input-group-text" for="inputGroupSelect01">Vai trò</label>
+                                    <select name="role" id="role" class="form-select" id="inputGroupSelect01">
+                                        <option selected>Chọn...</option>
                                         <option value="admin">Admin</option>
                                         <option value="user">User</option>
                                     </select>
-                                </span>
-
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
@@ -102,6 +104,7 @@
         </div>
     </div>
 </body>
+
 </html>
 <?php } else {
         //Nếu không phải admin thì không cho phép truy cập

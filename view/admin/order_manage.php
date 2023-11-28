@@ -21,7 +21,7 @@
         <h2>QUẢN LÝ ĐƠN HÀNG</h2>
         <b></b>
     </div>
-    <div>
+    <div class="order">
         <table class="table table-hover">
             <tr>
                 <th id="order_code">Đơn hàng</th>
@@ -31,17 +31,25 @@
                 <th>Trạng thái</th>
             </tr>
             <?php while ($results = $stmt->fetch(PDO::FETCH_ASSOC)) {?>
-                <tr>
-                    <td id="order_code"><?php echo $results["order_code"]?></td>
-                    <td id="icon"><a href="index.php?act=manage_order_detail&&id_order=<?=$results["id_order"]?>"><i class="fa-regular fa-eye"></i></a></td>
-                    <td><?php echo $results["order_time"]?></td>
-                    <td><?php echo number_format($results["order_total"])?> ₫</td>
-                    <td><?php echo $results["order_status"]?></td>
-                </tr>
+            <tr>
+                <td id="order_code"><?php echo $results["order_code"]?></td>
+                <td id="icon"><a href="index.php?act=manage_order_detail&&id_order=<?=$results["id_order"]?>"><i
+                            class="fa-regular fa-eye"></i></a></td>
+                <td><?php echo $results["order_time"]?></td>
+                <td><?php echo number_format($results["order_total"])?> ₫</td>
+                <?php if ($results["order_status"] == "Đã xác nhận") {?>
+                    <td style="color: green; text-transform: uppercase;"><?php echo $results["order_status"]?></td>
+                <?php } else if ($results["order_status"] == "Đã hủy") {?>
+                    <td style="color: red; text-transform: uppercase;"><?php echo $results["order_status"]?></td>
+                <?php } else {?>
+                    <td style="color: grey; text-transform: uppercase;"><?php echo $results["order_status"]?></td>
+                <?php }?>
+            </tr>
             <?php }?>
         </table>
     </div>
 </body>
+
 </html>
 <?php } else {
         //Nếu không phải admin thì không cho phép truy cập

@@ -223,10 +223,18 @@ th{
     color: crimson;
 }
 
+/*Quản lý đơn hàng*/
+.order{
+    margin: 0 30px;
+}
 
+.order table td{
+    background-color: #fbf8f88a;
+}
 /*Quản lý chi tiết đơn hàng*/
 .manage_order_detail{
     margin-left: 100px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #manage_order_detail td{
@@ -253,4 +261,17 @@ th{
 
 .order_info{
     margin-left: 140px;
+}
+
+.order_info table{
+    background: #f8f5f5;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.order_info table, .order_info th, .order_info td{
+    border: 1px dotted;
+}
+
+.btn-outline-success{
+    background: #f3f0f0;
 }

@@ -27,8 +27,16 @@
     height: 3px;
 }
 
+table{
+    margin-right: 30px;
+}
+
 table, td {
     border: 1px solid black;
+}
+
+table, tr, td{
+    border: 1px dotted;
 }
 
 .wrapper .row .description table tbody tr td{

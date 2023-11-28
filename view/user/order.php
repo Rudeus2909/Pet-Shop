@@ -35,7 +35,7 @@
     <div class="wrapper">
         <form class="form" action="index.php?act=add_order" method="post">
             <div class="row">
-                <div class="col-5">
+                <div class="col-5 order_info2">
                     <h4>Thông tin thanh toán</h4>
                     <label>Họ và tên</label>
                     <input class="form-control" type="text" name="order_owner" require>
@@ -51,10 +51,10 @@
                 </div>
                 <div class="col-6 your_order">
                     <h4>Đơn hàng của bạn</h4>
-                    <table style="margin-top: 30px">
+                    <table style="margin-top: 5px">
                         <tr>
                             <th style="width: 200px">SẢN PHẨM</th>
-                            <th style="width: 200px">SỐ LƯỢNG</th>
+                            <th class="text-center" style="width: 200px">SỐ LƯỢNG</th>
                             <th style="width: 200px">TẠM TÍNH</th>
                         </tr>
                         <?php $total = 0;
@@ -63,7 +63,7 @@
                             $total = $total + $temp_total;?>
                         <tr>
                             <td style="height: 40px"><?php echo $results["product_name"]?></td>
-                            <td><?php echo $results["amount"]?></td>
+                            <td class="text-center"><?php echo $results["amount"]?></td>
                             <td><?php echo number_format($temp_total)?> ₫</td>
                         </tr>
                         <?php }?>
@@ -81,7 +81,7 @@
                         <h4>Phương thức thanh toán</h4>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                value="option1">
+                                value="option1" checked>
                             <label class="form-check-label" for="inlineRadio1">Chuyển khoản ngân hàng</label>
                         </div>
                         <div class="form-check form-check-inline">
