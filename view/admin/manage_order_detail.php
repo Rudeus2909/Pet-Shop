@@ -39,6 +39,9 @@
             <div class="manage_order_detail">
                 <table id="manage_order_detail">
                     <tr>
+                        <th colspan="2">Thông tin đặt hàng</th>
+                    </tr>
+                    <tr>
                         <td id="weight">Mã đơn hàng</td>
                         <td><?php echo $results["order_code"]?></td>
                     </tr>
@@ -69,7 +72,8 @@
                     <div class="input-group mb-3">
                         <label class="input-group-text" for="inputGroupSelect01">Tình trạng đơn hàng</label>
                         <select class="form-select" id="inputGroupSelect01" name="order_status">
-                            <option value="<?=$results["order_status"]?>" selected><?php echo $results["order_status"]?></option>
+                            <option value="<?=$results["order_status"]?>" selected><?php echo $results["order_status"]?>
+                            </option>
                             <option value="Chờ xác nhận">Chờ xác nhận</option>
                             <option value="Đã xác nhận">Xác nhận đơn hàng</option>
                             <option value="Đã hủy">Hủy đơn hàng</option>

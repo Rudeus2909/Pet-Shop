@@ -95,7 +95,7 @@
         </div>
         <div class="add_detail_btn">
             <div>
-                <button type="button" class="btn btn-secondary btn-lg"><a href="index.php?act=fetch_product">Trở
+                <button type="button" class="btn btn-secondary btn-lg"><a style="text-decoration: none;" href="index.php?act=fetch_product">Trở
                         về</a></button>
             </div>
             <div>
@@ -136,7 +136,7 @@
         </div>
         <div class="add_detail_btn">
             <div>
-                <button type="button" class="btn btn-secondary btn-lg"><a href="index.php?act=fetch_product">Trở
+                <button type="button" class="btn btn-secondary btn-lg"><a style="text-decoration: none;" href="index.php?act=fetch_product">Trở
                         về</a></button>
             </div>
             <div>

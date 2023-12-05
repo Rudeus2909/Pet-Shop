@@ -129,7 +129,7 @@
         </div>
         <div class="add_detail_btn">
             <div>
-                <button type="button" class="btn btn-secondary btn-lg"><a href="index.php?act=fetch_product">Trở
+                <button type="button" class="btn btn-secondary btn-lg"><a style="text-decoration: none;" href="index.php?act=fetch_product">Trở
                         về</a></button>
             </div>
             <div>
@@ -174,7 +174,7 @@
             <div class="col-4">
                 <div class="form-floating mb-3">
                     <input type="text" name="price" class="form-control" required id="floatingInput" placeholder=" "
-                        value=<?=number_format($results["price"])?>>
+                        value=<?=$results["price"]?>>
                     <label for="floatingInput">Giá</label>
                 </div>
             </div>
@@ -206,7 +206,7 @@
         </div>
         <div class="add_detail_btn">
             <div>
-                <button type="button" class="btn btn-secondary btn-lg"><a href="index.php?act=fetch_product">Trở
+                <button type="button" class="btn btn-secondary btn-lg"><a style="text-decoration: none;" href="index.php?act=fetch_product">Trở
                         về</a></button>
             </div>
             <div>

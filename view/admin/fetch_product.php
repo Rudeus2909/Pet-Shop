@@ -128,19 +128,24 @@ if (isset($_SESSION["role"]) && $_SESSION["role"] == "admin") {
                 </tr>
                 <?php }?>
             </table>
-
-            <!-- Hiển thị liên kết phân trang -->
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                    <?php for ($i = 1; $i <= $pages; $i++) { ?>
-                    <li class="page-item"><a class="page-link"
-                            href="?act=fetch_product&page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
-                    <?php } ?>
-                </ul>
-            </nav>
         </div>
     </div>
+    <div class="page">
+        <!-- Hiển thị liên kết phân trang -->
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link">Trang</a>
+                </li>
+                <?php for ($i = 1; $i <= $pages; $i++) { ?>
+                <li class="page-item"><a class="page-link"
+                        href="?act=fetch_product&page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+                <?php } ?>
+            </ul>
+        </nav>
+    </div>
 </body>
+
 </html>
 <?php } else {
         //Nếu không phải admin thì không cho phép truy cập

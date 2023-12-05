@@ -5,7 +5,8 @@
     $keyword = $_POST['keyword'];
     $stmt = $conn->prepare('SELECT * FROM web.product JOIN web.type ON product.id_type=type.id_type
                                                     JOIN web.category ON product.id_category=category.id_category
-                                                    WHERE (type.type_name LIKE :keyword) OR (category.category_name LIKE :keyword)');
+                                                    WHERE (type.type_name LIKE :keyword) OR (category.category_name LIKE :keyword)
+                                                                                         OR (product.product_name LIKE :keyword)');
     $stmt->bindValue(':keyword', '%'.$keyword.'%');
     $stmt->execute();
     $count = $stmt->rowCount();
@@ -16,14 +17,16 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style_product.css">
     <title>Tìm kiếm sản phẩm</title>
 </head>
+
 <body>
-<div class="main">
+    <div class="main">
         <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {?>
         <div class="card">
             <div class="image">
@@ -32,10 +35,12 @@
             <div class="caption">
                 <p class="product_name"><?php echo $row["product_name"]?></p>
                 <p class="price"><?php echo number_format($row["price"])?> ₫</p>
-                <a class="product_detail" href="index.php?act=product_detail&&id=<?=$row['id_product'];?>">Chi tiết sản phẩm</a>
+                <a class="product_detail" href="index.php?act=product_detail&&id=<?=$row['id_product'];?>">Chi tiết sản
+                    phẩm</a>
             </div>
         </div>
         <?php };?>
     </div>
 </body>
+
 </html>

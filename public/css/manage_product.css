@@ -29,10 +29,14 @@ td {
     border-color: #979595;
 }
 
-.main, .admin_info, .manage_info{
+.main, .admin_info, .manage_info, .page{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.page{
+    margin-top: 10px;
 }
 
 /*Quản lý tài khoản*/
@@ -237,9 +241,9 @@ th{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-#manage_order_detail td{
+#manage_order_detail td, #manage_order_detail th{
     background: #f8f5f5;
-    border: none;
+    border: 1px dotted;
 }
 
 #weight{
